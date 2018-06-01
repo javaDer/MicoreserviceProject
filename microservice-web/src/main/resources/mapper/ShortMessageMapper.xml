@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wwtianmei.mapper.ShortMessageMapper">
+	<!--开启二级缓存-->
+	<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+	<resultMap id="BaseResultMap" type="cn.wwtianmei.entity.ShortMessage">
+		<id column="id" property="id" />
+		<result column="telphone" property="telphone" />
+		<result column="code" property="code" />
+		<result column="status" property="status" />
+		<result column="submitTime" property="submittime" />
+		<result column="updateTime" property="updatetime" />
+	</resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+        id, telphone, code, status, submitTime AS submittime, updateTime AS updatetime
+    </sql>
+</mapper>

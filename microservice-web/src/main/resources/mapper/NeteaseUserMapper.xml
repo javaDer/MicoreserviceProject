@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wwtianmei.mapper.NeteaseUserMapper">
+	<!--开启二级缓存-->
+	<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+	<resultMap id="BaseResultMap" type="cn.wwtianmei.entity.NeteaseUser">
+		<id column="id" property="id" />
+		<result column="neteaseAccid" property="neteaseaccid" />
+		<result column="phone" property="phone" />
+		<result column="nickName" property="nickname" />
+		<result column="sex" property="sex" />
+		<result column="avatar" property="avatar" />
+		<result column="title" property="title" />
+		<result column="neteaseToken" property="neteasetoken" />
+		<result column="userName" property="username" />
+		<result column="password" property="password" />
+	</resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+        id, neteaseAccid AS neteaseaccid, phone, nickName AS nickname, sex, avatar, title, neteaseToken AS neteasetoken, userName AS username, password
+    </sql>
+</mapper>
